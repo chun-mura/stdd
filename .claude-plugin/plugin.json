@@ -1,0 +1,10 @@
+{
+  "name": "stdd",
+  "version": "0.1.0",
+  "description": "Scientific test design toolkit: evidence-based test case derivation methods, method selection guide, and test suite quality evaluation",
+  "author": { "name": "chun-mura" },
+  "homepage": "https://github.com/chun-mura/stdd",
+  "repository": "https://github.com/chun-mura/stdd",
+  "license": "MIT",
+  "keywords": ["test-design", "boundary-value-analysis", "equivalence-partitioning", "mutation-testing", "workflow"]
+}

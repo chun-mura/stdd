@@ -1,0 +1,14 @@
+{
+  "name": "stdd",
+  "description": "Marketplace for the stdd scientific test design toolkit",
+  "owner": { "name": "chun-mura" },
+  "plugins": [
+    {
+      "name": "stdd",
+      "source": ".",
+      "description": "Scientific test design toolkit: evidence-based test case derivation methods, method selection guide, and test suite quality evaluation",
+      "category": "workflow",
+      "tags": ["test-design", "boundary-value-analysis", "equivalence-partitioning", "mutation-testing"]
+    }
+  ]
+}
