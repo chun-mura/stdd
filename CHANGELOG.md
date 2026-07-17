@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 - 2026-07-17
+
+Phase 3 資産を追加。手法カタログの完成と、スイート十分性評価の第2 skill を導入した。
+
+- `skills/test-design-methods/references/property-based.md`: property-based testing の選択基準・科学的根拠・trailofbits-property-based-testing スキルへの委譲ポインタ (運用ルール4: how-to は書かない)
+- `skills/test-design-methods/references/fuzz.md`: fuzz testing (attack surface 特定 → ハーネス → カバレッジガイド付き実行 → クラッシュ入力の回帰昇格)。検証済み出典付き
+- `skills/test-suite-evaluation/`: 第2の自動発動 skill — カバレッジ数値を無批判に受け入れず、mutation testing とカバレッジ基準の強度階層でスイートの信頼性を判断する。references 2ファイル (mutation-testing / coverage-criteria)。生き残り mutant・未実行分岐を test-design-methods の選択フローに入力する連携点を明記
+- `README.md`: Skills インデックスに test-suite-evaluation を追加
+
 ## 0.3.0 - 2026-07-17
 
 Phase 2 資産を追加。ユーザ起動 command と手法カタログの拡充。
