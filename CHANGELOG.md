@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.0 - 2026-07-17
+
+外部レビュー指摘を受けたフィードバックループ command を2つ追加。2回ルール (実運用2回で昇格) の明示的な例外として導入した。
+
+- `commands/mutation-check.md`: `/stdd:mutation-check` — mutation ツール (mutmut/Stryker/PIT) を差分限定で実行し、生存 mutant を分類 (テスト不足/等価/到達不能) した上で `docs/test-design/` のケース一覧と突き合わせ、「実装漏れ」「設計漏れ」を判定。設計漏れは test-design-methods の選択フローで不足ケースを導出してケース一覧に追記する
+- `commands/test-design-sync.md`: `/stdd:test-design-sync` — テスト設計書のケース一覧と実テストコードを read-only サブエージェントで並列照合し、実装済み/乖離/未実装/設計外テストを判定。承認後にケース一覧へ「状態」列を反映する (aidd:design-sync と同型の設計)
+- `docs/superpowers/specs/2026-07-17-stdd-design.md`: 非機能テストのスコープ判断を追記 (セキュリティ観点は既存手法で導出、性能・負荷はスコープ外)
+- `README.md`: Commands インデックスに2 command を追加
+
 ## 0.4.0 - 2026-07-17
 
 Phase 3 資産を追加。手法カタログの完成と、スイート十分性評価の第2 skill を導入した。
