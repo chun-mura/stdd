@@ -21,7 +21,7 @@
 
 4. **組合せ生成方法を選ぶ**:
    - **PICT (Pairwise Independent Combinatorial Testing, Microsoft OSS)** — 主ツール。モデルファイル形式で制約を記述、結果は配列出力
-   - **代替ツール**: AllPairs, ACTS (NIST) など
+   - **代替ツール**: ACTS (NIST)
    - **手作業**: パラメータが少ない (2〜3個) 場合、または直交表 L4, L8, L9 を使う
 
 5. 生成結果の各行が1テストケース。実装側で制約をフィルタして有効なテストケースのみを実行する
