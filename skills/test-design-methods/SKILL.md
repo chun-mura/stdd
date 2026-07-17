@@ -19,8 +19,8 @@ description: Use when writing or planning test cases and deciding which inputs, 
 | 複数条件の組合せで挙動が決まる (割引・権限・バリデーションルール) | デシジョンテーブル | `references/decision-table.md` |
 | 状態・呼び出し順序に依存する | 状態遷移テスト | `references/state-transition.md` |
 | 独立パラメータが多く全組合せが爆発する | ペアワイズ | `references/pairwise.md` |
-| roundtrip・不変条件を持つ純関数 / シリアライザ / パーサ | property-based testing → **trailofbits-property-based-testing スキルに委譲** (性質カタログ・ジェネレータ・ライブラリ選定はそちらが担当。stdd では扱わない) | — |
-| 信頼できない入力を読むパーサ / デシリアライザ | fuzz (Phase 3 で追加予定・未収録) | — |
+| roundtrip・不変条件を持つ純関数 / シリアライザ / パーサ | property-based testing → **trailofbits-property-based-testing スキルに委譲** (性質カタログ・ジェネレータ・ライブラリ選定はそちらが担当。stdd では扱わない) | `references/property-based.md` |
+| 信頼できない入力を読むパーサ / デシリアライザ | fuzz | `references/fuzz.md` |
 
 複数の手法に該当する場合は併用する (同値分割 + 境界値分析が通常セット)。
 
