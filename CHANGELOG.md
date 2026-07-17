@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 - 2026-07-17
+
+Phase 1 資産を追加。テスト設計手法の中核 skill を導入した。
+
+- `skills/test-design-methods/`: 手法選択フロー (SKILL.md) + 手法カタログ references 3ファイル (同値分割 / 境界値分析 / デシジョンテーブル)。全手法に検証済み出典付き (ISTQB Foundation v4.0 / Myers / ISO/IEC/IEEE 29119-4 / Reid 1997)。property-based testing は trailofbits-property-based-testing スキルへ委譲 (運用ルール4)
+- superpowers:writing-skills 方式のサブエージェント検証 (RED→GREEN) を実施: スキルなしで観測した4つの失敗モード (導出成果物なし / ルール否定側の欠落 / 組合せ選定のアドホック性 / off-point の非系統性) がスキルありで全て解消することを確認
+- `README.md`: Skills インデックスに test-design-methods を追加
+
 ## 0.1.0 - 2026-07-17
 
 初期スキャフォールド。プラグイン骨格 (plugin.json / marketplace.json / README / CI) のみで資産は未収録。
