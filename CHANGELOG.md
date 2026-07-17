@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 - 2026-07-17
+
+Phase 2 資産を追加。ユーザ起動 command と手法カタログの拡充。
+
+- `commands/test-design.md`: `/stdd:test-design` — 対象コード (+ aidd test-perspectives の観点出力があればそれ) から手法を選択し、導出成果物と具体テストケース一覧を `docs/test-design/YYYY-MM-DD-<slug>.md` に生成する。aidd 非依存で単体動作する
+- `skills/test-design-methods/references/state-transition.md`: 状態遷移テスト (状態遷移表・無効遷移・カバレッジ水準 0-switch/1-switch)。検証済み出典付き
+- `skills/test-design-methods/references/pairwise.md`: ペアワイズテスト (PICT によるツール生成・デシジョンテーブルとの選び分け)。検証済み出典付き
+- `README.md`: Commands インデックスに /stdd:test-design を追加
+
 ## 0.2.0 - 2026-07-17
 
 Phase 1 資産を追加。テスト設計手法の中核 skill を導入した。
