@@ -1,4 +1,4 @@
-# stdd — Scientific Test Design Toolkit 設計
+# stdd — Scientific Test-Driven Development 設計
 
 日付: 2026-07-17
 ステータス: フェーズ1 実装予定 (v0.2.0 で初期資産)
