@@ -35,10 +35,7 @@ branch カバレッジの計測フラグ例 (2つまで):
 
 ## 科学的根拠
 
-- Chilenski, J. and Miller, S. (1994). "Applicability of Modified Condition/Decision Coverage to Software Testing." Software Engineering Journal, Vol. 9, No. 5, pp. 193–200 — MC-DC の原典。複合条件を含むクリティカルロジックの検証水準を定義した基盤論文。各条件が独立に結果を変えることの検証必要性を立証
-- DO-178B/C (EUROCAE ED-12B/C) — 航空機認証の国際規格。DAL A (最高安全度レベル) ソフトウェアに 100% MC-DC カバレッジを要求。業界標準での採用が MC-DC の実用性を証明
-- Inozemtseva, L. and Holmes, R. (2014). "Coverage Is Not Strongly Correlated with Test Suite Effectiveness." Proceedings of the 36th International Conference on Software Engineering (ICSE), pp. 435–445 — 5 個の大規模 Java プロジェクト (100K+ LOC 各) で mutation testing を適用。「coverage と effectiveness の相関は低い」ことを実証。カバレッジが高いだけでは品質保証にならないことを定量的に示す
-- Hutchins, M., Foster, H., Goradia, T., and Ostrand, T. (1994). "Experiments on the Effectiveness of Dataflow- and Control-Flow-Based Test Adequacy Criteria." Proceedings of the 16th International Conference on Software Engineering (ICSE) — 7 プログラム・130 個の欠陥バージョンで all-edges/all-DUs カバレッジを検証。カバレッジ 90% 以上で欠陥検出率が有意に向上する一方、100% 近くでも検出保証にはならないことを実証
+Chilenski & Miller 1994 (MC-DC 原典) / DO-178B/C / Inozemtseva & Holmes 2014 (ICSE — coverage と effectiveness の相関は低い) / Hutchins et al. 1994 (ICSE) — 全文は `sources.md` 参照
 
 ## 限界と誤用
 

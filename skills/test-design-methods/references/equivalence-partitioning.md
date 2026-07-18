@@ -40,10 +40,7 @@ JS/TS では `test.each` が同じ役割を果たす (クラス表の行をそ�
 
 ## 科学的根拠
 
-- ISTQB Foundation Level Syllabus v4.0 (2023), §4.2.1 "Equivalence Partitioning" — 同値分割の定義・有効/無効パーティションの区別・派生手順の標準的定式化を裏付ける
-- Myers, Sandler, Badgett, "The Art of Software Testing", 3rd Edition (Wiley, 2011) — 同値分割の古典的定式化 (条件から有効/無効クラスを導く手順) を裏付ける
-- ISO/IEC/IEEE 29119-4:2021 (2nd edition), "Software and systems engineering — Software testing — Part 4: Test techniques" — 同値分割をテスト技法として国際規格上に定義していることを裏付ける
-- Reid, S. (1997), "An empirical analysis of equivalence partitioning, boundary value analysis and random testing", Proceedings of the 4th International Software Metrics Symposium (IEEE METRICS) — 実運用の航空機システム (Ada, 約2万行) を対象に EP/BVA/ランダムテストの欠陥検出力を比較した実証研究の存在を裏付ける (結論の方向性は境界値分析側を参照。具体的な検出率の数値は検索で一次情報を確認できなかったため本ファイルには記載しない)
+ISTQB FL Syllabus v4.0 §4.2.1 / Myers "The Art of Software Testing" 3rd ed. / ISO/IEC/IEEE 29119-4:2021 / Reid 1997 (IEEE METRICS) — 全文は `sources.md` 参照
 
 ## 限界と誤用
 

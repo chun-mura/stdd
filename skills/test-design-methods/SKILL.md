@@ -31,7 +31,3 @@ description: Use when writing or planning test cases and deciding which inputs, 
 3. 各 reference の「導出手順」に従って成果物 (表) を作る
 4. 成果物の各行をテストケース化する。優先順位は must から (`docs/test-perspectives/` に最新ファイルがあれば、その must 観点を優先してケース化する)
 5. 成果物をテストコードのコメント or docstring に残し、後から監査できるようにする
-
-## 掲載ルール (references への手法追加の不変条件)
-
-references/ への手法追加は「科学的根拠」セクションに検証済みの出典があるものに限る。出典が確認できない手法・数値は掲載禁止。

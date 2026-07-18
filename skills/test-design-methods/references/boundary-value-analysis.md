@@ -37,10 +37,7 @@ def test_shipping_fee_boundary(total, expected):
 
 ## 科学的根拠
 
-- ISTQB Foundation Level Syllabus v4.0 (2023), §4.2.2 "Boundary Value Analysis" — 境界値分析の定義、2値法/3値法の区別、境界値が欠陥の集中する箇所であるという根拠づけを裏付ける
-- Myers, Sandler, Badgett, "The Art of Software Testing", 3rd Edition (Wiley, 2011) — 境界値分析の古典的定式化 (同値分割の境界に着目する手順) を裏付ける
-- ISO/IEC/IEEE 29119-4:2021 (2nd edition), "Software and systems engineering — Software testing — Part 4: Test techniques" — 境界値分析をテスト技法として国際規格上に定義していることを裏付ける
-- Reid, S. (1997), "An empirical analysis of equivalence partitioning, boundary value analysis and random testing", Proceedings of the 4th International Software Metrics Symposium (IEEE METRICS) — 実運用の航空機システム (Ada, 約2万行) を対象にした実証研究で、境界値分析が同値分割・ランダムテストより欠陥検出力が高かったと報告されていることを複数の独立した検索結果で確認した (具体的な検出率の数値は一次情報 [IEEE Xplore doc 637166] の本文を取得できず確認できなかったため記載しない)
+ISTQB FL Syllabus v4.0 §4.2.2 / Myers "The Art of Software Testing" 3rd ed. / ISO/IEC/IEEE 29119-4:2021 / Reid 1997 (IEEE METRICS) — 全文は `sources.md` 参照
 
 ## 限界と誤用
 

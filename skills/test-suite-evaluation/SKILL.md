@@ -18,7 +18,3 @@ description: Use when judging whether an existing test suite is trustworthy — 
 | 「このスイートを信頼してリファクタしてよいか」 | 変更対象モジュールの branch カバレッジを確認 (未実行分岐を列挙) → 重要ロジックに mutation testing を適用 | `references/mutation-testing.md`, `references/coverage-criteria.md` |
 | 「カバレッジ X% は十分か」 | 基準の種類を確認 (statement ⊂ branch ⊂ condition ⊂ MC-DC の強度階層) → 数値目標の一律適用はアンチパターン | `references/coverage-criteria.md` |
 | 「テストを増やすべきか・どの種類か」 | 生き残った mutant と未実行分岐を列挙 → test-design-methods の選択フローに入力して手法を選ぶ | `references/mutation-testing.md` + test-design-methods 連携 |
-
-## 掲載ルール
-
-references/ への追加は「科学的根拠」セクションに検証済み出典があるものに限る。出典が確認できない手法・数値は掲載禁止 (test-design-methods と同一ルール)。

@@ -14,7 +14,7 @@ roundtrip 対 (encode/decode, serialize/deserialize)、正規化や冪等な変�
 
 ## 科学的根拠
 
-- Claessen, K. & Hughes, J. (2000), "QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs", Proceedings of the 5th ACM SIGPLAN International Conference on Functional Programming (ICFP '00) — property-based testing の原点的フレームワークを確立した論文。性質に基づくテスト生成のパラダイムを初めて定式化した。
+Claessen & Hughes 2000 "QuickCheck" (ICFP '00) — 全文は `sources.md` 参照
 
 ## 限界と誤用
 

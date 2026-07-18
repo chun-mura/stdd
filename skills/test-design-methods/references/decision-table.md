@@ -46,8 +46,7 @@ def test_shipping_fee_rules(rank, express, total, expected):
 
 ## 科学的根拠
 
-- ISTQB Foundation Level Syllabus v4.0 (2023), §4.2.3 "Decision Table Testing" — デシジョンテーブルの定義、条件の組合せからテストケースを導出する標準手順を裏付ける
-- ISO/IEC/IEEE 29119-4:2021 (2nd edition), "Software and systems engineering — Software testing — Part 4: Test techniques" — デシジョンテーブルテストをテスト技法として国際規格上に定義していることを裏付ける
+ISTQB FL Syllabus v4.0 §4.2.3 / ISO/IEC/IEEE 29119-4:2021 — 全文は `sources.md` 参照
 
 ## 限界と誤用
 

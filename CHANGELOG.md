@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.2 - 2026-07-18
+
+トークン効率の改善。手法の内容・出典の変更はなし (skill 発動時の実効トークンを約25%削減)。
+
+- `skills/*/references/sources.md` (新規): 全 references の「科学的根拠」全文を skill ごとに集約。各 reference には出典キー1行 + sources.md へのポインタのみ残した (reference 読み込み1回あたり20〜30%削減)
+- `skills/test-design-methods/SKILL.md`, `skills/test-suite-evaluation/SKILL.md`: 「掲載ルール」セクションを削除 — コントリビュート時の規約であり実行時コンテキストに不要のため、README 運用ルール6 + sources.md に移動
+- `skills/test-design-methods/references/pairwise.md`: 実装パターンの重複例 (PICT 実行結果・pytest コード) を削除し、モデルファイル例 + 1対1対応の原則1行に圧縮
+- `README.md`: 運用ルール6 (出典必須・sources.md 集約) を追加
+
 ## 0.5.1 - 2026-07-18
 
 外部レビュー (科学的正確性の監査) で見つかった誤りを修正。手法の追加・変更はなし。

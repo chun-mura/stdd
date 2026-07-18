@@ -49,8 +49,7 @@ JS/TS では同様に `test.each` で実装し、表との対応を保つ。
 
 ## 科学的根拠
 
-- ISTQB Certified Tester Foundation Level Syllabus v4.0 (2023), §4.2.4 "State Transition Testing" — 状態遷移テストの定義、テスト手法としての標準的手順、状態・イベント・遷移の概念を裏付ける
-- Chow, T.S. (1978) "Testing Software Design Modeled by Finite-State Machines", IEEE Transactions on Software Engineering, vol. 4, no. 3, pp. 178-187 — 有限状態機械による設計テストの原典的論文。N-switch カバレッジなど遷移ペア以上の多段階カバレッジ戦略の理論的基礎を裏付ける
+ISTQB FL Syllabus v4.0 §4.2.4 / Chow 1978 (IEEE TSE) — 全文は `sources.md` 参照
 
 ## 限界と誤用
 

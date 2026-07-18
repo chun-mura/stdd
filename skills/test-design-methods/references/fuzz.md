@@ -36,9 +36,7 @@ Go ならネイティブ `go test -fuzz=FuzzName` が可能。ツール選択は
 
 ## 科学的根拠
 
-- Miller, B. P., Fredriksen, L., & So, B. (1990), "An Empirical Study of the Reliability of UNIX Utilities", Communications of the ACM 33(12) — fuzzing の起源。約90個の UNIX ユーティリティを検査し、約25% がランダム入力で**クラッシュ**した。基本的なメモリ安全性・入力検証の欠陥が広く存在することを実証。
-- Seacord, R. C. (2013), "Secure Coding in C and C++", 2nd Edition (Addison-Wesley) — メモリ安全性違反の分類と、ファジングの検出効果。
-- Google OSS-Fuzz (2016–) — 継続的ファジング基盤。Google の公表 (2023年2月時点) で、1,000 以上のオープンソースプロジェクトから累積 8,900 以上の脆弱性・28,000 以上のバグを検出。実運用での効果を実証。
+Miller et al. 1990 (CACM — fuzzing の起源) / Seacord 2013 / Google OSS-Fuzz 実績 — 全文は `sources.md` 参照
 
 ## 限界と誤用
 
