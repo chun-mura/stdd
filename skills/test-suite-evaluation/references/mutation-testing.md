@@ -28,7 +28,7 @@ CI では全テストではなく差分対象のみに掛ける (実行時間削
 
 - Jia, Y. and Harman, M. (2011). "An Analysis and Survey of the Development of Mutation Testing." IEEE Transactions on Software Engineering, Vol. 37, No. 5, pp. 649–678 — mutation testing の発展史と基礎理論を包括的に調査。mutation operators の定式化と効果の実証
 - Just, R., Jalali, D., Inozemtseva, L., Ernst, M. D., Holmes, R., and Fraser, G. (2014). "Are Mutants a Valid Substitute for Real Faults in Software Testing?" Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering (FSE), pp. 654–665 — 357 個の実欠陥と mutant 検出の相関を実証。「mutant を検出できるテストは実欠陥も検出しやすい」という信頼性を確立
-- Papadakis, M., Kintis, J., Zhang, J., Jia, Y., Le Traon, Y., and Harman, M. (2019). "Mutation Testing Advances: An Analysis and Survey." Advances in Computers, Vol. 112, pp. 275–378 — 最新の mutation testing 技術、ツール、応用事例をサーベイ。高コスト問題への対策 (equivalent mutant 検出、並列化) を解説
+- Papadakis, M., Kintis, M., Zhang, J., Jia, Y., Le Traon, Y., and Harman, M. (2019). "Mutation Testing Advances: An Analysis and Survey." Advances in Computers, Vol. 112, pp. 275–378 — 最新の mutation testing 技術、ツール、応用事例をサーベイ。高コスト問題への対策 (equivalent mutant 検出、並列化) を解説
 
 ## 限界と誤用
 

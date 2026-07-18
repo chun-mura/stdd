@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.1 - 2026-07-18
+
+外部レビュー (科学的正確性の監査) で見つかった誤りを修正。手法の追加・変更はなし。
+
+- `skills/test-suite-evaluation/references/coverage-criteria.md`: カバレッジ包含関係の誤り修正 — condition coverage は branch を包含しない (旧記載「statement ⊂ branch ⊂ condition ⊂ MC-DC」は誤り。正: statement ⊂ branch ⊂ MC-DC、condition は鎖の外)。反例を追記。Hutchins et al. 1994 の論文タイトルを実在のものに訂正。Go の branch coverage に関する誤記 (`-covermode=atomic` は branch 計測と無関係) を修正
+- `skills/test-design-methods/references/pairwise.md`: PICT モデル例の制約がコメント (Safari only on macOS) と矛盾していたのを修正
+- `skills/test-suite-evaluation/references/mutation-testing.md`: Papadakis et al. 2019 の共著者表記を訂正 (Kintis, J. → Kintis, M.)
+- `skills/test-design-methods/references/fuzz.md`: OSS-Fuzz の検出実績数値に公表時点 (2023年2月) を明記し数値を公表値に合わせた
+- `skills/test-design-methods/references/decision-table.md`: 「ペアワイズ (Phase 2 で追加予定)」の stale 参照を `pairwise.md` への参照に更新
+- `skills/test-design-methods/references/state-transition.md`: aidd:test-perspectives への参照を条件付き (併用時のみ) に変更し standalone 動作の記述と整合させた
+- `README.md`: test-design-methods の手法列挙を現在のカタログ (状態遷移・ペアワイズ含む) に合わせて更新
+
 ## 0.5.0 - 2026-07-17
 
 外部レビュー指摘を受けたフィードバックループ command を2つ追加。2回ルール (実運用2回で昇格) の明示的な例外として導入した。

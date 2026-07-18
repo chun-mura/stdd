@@ -38,8 +38,7 @@ Browser: Chrome, Firefox, Safari
 Resolution: 1080p, 2K, 4K
 
 # Constraints: Safari only on macOS, 4K only on macOS/Linux
-IF [OS] = "macOS" THEN [Browser] <> "Chrome";
-IF [OS] = "Windows" THEN [Browser] <> "Safari";
+IF [Browser] = "Safari" THEN [OS] = "macOS";
 IF [Resolution] = "4K" THEN [OS] <> "Windows";
 ```
 
