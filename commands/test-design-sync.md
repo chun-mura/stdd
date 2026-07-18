@@ -1,7 +1,9 @@
 ---
-description: テスト設計書 (docs/test-design/) と実テストコードの乖離を検知し、ケースの実装状態を最新化する
+description: experimental: テスト設計書 (docs/test-design/) と実テストコードの乖離を検知し、ケースの実装状態を最新化する
 argument-hint: [対象設計書パス。省略時は docs/test-design/ 全体]
 ---
+
+> experimental: 継続管理された D-ID 付き設計書があるプロジェクト向け。実運用での有効性を検証中であり、結果は必ず人が確認する。
 
 対象: $ARGUMENTS (未指定なら `docs/test-design/` 配下の全 `.md`)
 

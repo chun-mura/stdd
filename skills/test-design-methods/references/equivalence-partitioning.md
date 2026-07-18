@@ -11,4 +11,4 @@
 3. `D-ID / 入力 / クラス / 代表値 / 期待結果` の表を作る。
 4. 複数の無効クラスを1ケースに混在させない。
 
-実装は `docs/test-implementation-conventions.md`。根拠は `docs/evidence.md`（EP / BVA）。
+根拠は `docs/evidence.md`（EP / BVA）。

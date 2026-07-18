@@ -11,4 +11,4 @@
 3. 通常は全遷移（0-switch）、前操作の影響が疑わしければ遷移ペア以上を選ぶ。
 4. `D-ID / 現在状態 / イベント / 期待次状態または例外` の表にする。
 
-エラー・timeout を含め、無効遷移を省略しない。実装は `docs/test-implementation-conventions.md`、根拠は `docs/evidence.md`（state transition）。
+エラー・timeout を含め、無効遷移を省略しない。根拠は `docs/evidence.md`（state transition）。

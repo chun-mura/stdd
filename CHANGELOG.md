@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.1 - 2026-07-18
+
+非中核資産を整理。
+
+- 開発時の `docs/superpowers/` と、内容を skill へ統合した共通規約ファイルを削除
+- `/stdd:test-design-sync` を experimental と明示。継続管理された D-ID 付き設計書がある場合だけ使う
+- `test-design-methods` に共通の実装規約を統合し、追加の reference 読込を不要化
+
 ## 0.6.0 - 2026-07-18
 
 性能を維持したトークン使用量の削減。

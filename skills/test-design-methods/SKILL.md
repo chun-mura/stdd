@@ -18,4 +18,10 @@ description: Use when writing or planning test cases and deciding which inputs, 
 | roundtrip・不変条件を持つ純関数 / シリアライザ / パーサ | PBT を trailofbits-property-based-testing に委譲 | `references/property-based.md` |
 | 信頼できない入力を読むパーサ / デシリアライザ | fuzz | `references/fuzz.md` |
 
-複数該当時は併用する。必要な reference だけを読み、入力・条件→導出表→ケースの順に進める。既存の `docs/test-perspectives/` があれば must を優先し、実装は `docs/test-implementation-conventions.md` に従う。
+複数該当時は併用する。必要な reference だけを読み、入力・条件→導出表→ケースの順に進める。既存の `docs/test-perspectives/` があれば must を優先する。
+
+## 実装規約
+
+- 導出表の1行を、原則として1つのテストケースまたは parameterized test の1行に対応させ、D-ID をコメント等に残す。
+- 無効クラス・否定側ルール・無効遷移は独立に検証する。
+- 組合せの制約、境界の分解能と on/off 規約は設計書に残し、言語固有の記法は対象プロジェクトの既存規約を優先する。

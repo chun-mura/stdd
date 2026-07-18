@@ -10,4 +10,4 @@
 2. PICT または ACTS で制約付き 2-way 組合せを生成する。
 3. `D-ID / パラメータ… / 制約` の生成表を保存し、各行をケース化する。
 
-既知の3変数以上の相互作用には t-way を選ぶ。実装は `docs/test-implementation-conventions.md`、根拠は `docs/evidence.md`（Pairwise）。
+既知の3変数以上の相互作用には t-way を選ぶ。根拠は `docs/evidence.md`（Pairwise）。

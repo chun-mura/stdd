@@ -21,7 +21,7 @@
 |---|---|
 | `/stdd:test-design` | 対象コードとテスト観点から適用手法を選択し、具体テストケース一覧を導出して `docs/test-design/` に保存する |
 | `/stdd:mutation-check` | mutation testing を実行し、生存 mutant を `docs/test-design/` のケース一覧と突き合わせて不足ケースを提案する |
-| `/stdd:test-design-sync` | テスト設計書と実テストコードの乖離を検知し、ケースの実装状態を最新化する |
+| `/stdd:test-design-sync` | experimental: D-ID 付き設計書と実テストコードの乖離を検知する（結果は要確認） |
 
 ### Skills (自動トリガする知見)
 

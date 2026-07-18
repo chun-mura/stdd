@@ -10,4 +10,4 @@
 2. 決定的な1入力1実行の harness を作る。
 3. coverage-guided fuzzer を実行し、クラッシュ入力を最小化して回帰 corpus に加える。
 
-導出表は `D-ID / 入力面・不変条件 / harness・corpus / 停止条件` とする。CI は最小 corpus と定期フル実行に分ける。構造化入力には辞書・文法を使う。実装は `docs/test-implementation-conventions.md`、根拠は `docs/evidence.md`（fuzz）。
+導出表は `D-ID / 入力面・不変条件 / harness・corpus / 停止条件` とする。CI は最小 corpus と定期フル実行に分ける。構造化入力には辞書・文法を使う。根拠は `docs/evidence.md`（fuzz）。

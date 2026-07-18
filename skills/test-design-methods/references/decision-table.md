@@ -11,4 +11,4 @@
 3. 結果に影響しないと確認できた行だけを縮約する。
 4. `D-ID / 条件… / 期待アクション` の表にし、成立行と否定側の行をともにケース化する。
 
-実装は `docs/test-implementation-conventions.md`。根拠は `docs/evidence.md`（decision table）。
+根拠は `docs/evidence.md`（decision table）。

@@ -10,4 +10,4 @@
 2. 整数は ±1、実数は仕様上の分解能を off-point に使う。分解能がなければドメイン上の最小差分を先に決める。
 3. 開区間・閉区間を明記し、`D-ID / 境界 / 値 / 期待結果` の表にする。
 
-複合境界は単純な on/off で済ませない。実装は `docs/test-implementation-conventions.md`、根拠は `docs/evidence.md`（EP / BVA）。
+複合境界は単純な on/off で済ませない。根拠は `docs/evidence.md`（EP / BVA）。
