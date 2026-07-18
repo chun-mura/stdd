@@ -5,29 +5,17 @@ description: Use when writing or planning test cases and deciding which inputs, 
 
 # test-design-methods
 
-対象コードの特性から適切なテスト設計手法を選び、テストケースを機械的に導出する。テストコードを書く前に発動する。superpowers:test-driven-development の RED で書く「次の1テスト」の中身をここで導出する。
-
-## 鉄則
-
-テストケースは**導出成果物** (同値クラス表 / 境界一覧表 / デシジョンテーブル) から作る。成果物なしで直感的にケースを列挙すると、網羅性を第三者が監査できない。導出成果物なしの直感列挙は禁止。
+テストコードの前に、対象の性質から手法を選び、導出表の行をケース化する。直感だけで列挙しない。
 
 ## 手法選択フロー
 
 | コード特性 | 手法 | 参照 |
 |---|---|---|
-| 入力に範囲・閾値・サイズ制限がある | 同値分割 → 各クラスの境界に境界値分析 | `references/equivalence-partitioning.md` → `references/boundary-value-analysis.md` |
+| 入力に範囲・閾値・サイズ制限がある | 同値分割 + 境界値分析 | `references/equivalence-partitioning.md`, `references/boundary-value-analysis.md` |
 | 複数条件の組合せで挙動が決まる (割引・権限・バリデーションルール) | デシジョンテーブル | `references/decision-table.md` |
 | 状態・呼び出し順序に依存する | 状態遷移テスト | `references/state-transition.md` |
 | 独立パラメータが多く全組合せが爆発する | ペアワイズ | `references/pairwise.md` |
-| roundtrip・不変条件を持つ純関数 / シリアライザ / パーサ | property-based testing → **trailofbits-property-based-testing スキルに委譲** (性質カタログ・ジェネレータ・ライブラリ選定はそちらが担当。stdd では扱わない) | `references/property-based.md` |
+| roundtrip・不変条件を持つ純関数 / シリアライザ / パーサ | PBT を trailofbits-property-based-testing に委譲 | `references/property-based.md` |
 | 信頼できない入力を読むパーサ / デシリアライザ | fuzz | `references/fuzz.md` |
 
-複数の手法に該当する場合は併用する (同値分割 + 境界値分析が通常セット)。
-
-## 適用手順
-
-1. 対象の入力・条件を列挙する
-2. 上記フローで手法を選ぶ (複数可)
-3. 各 reference の「導出手順」に従って成果物 (表) を作る
-4. 成果物の各行をテストケース化する。優先順位は must から (`docs/test-perspectives/` に最新ファイルがあれば、その must 観点を優先してケース化する)
-5. 成果物をテストコードのコメント or docstring に残し、後から監査できるようにする
+複数該当時は併用する。必要な reference だけを読み、入力・条件→導出表→ケースの順に進める。既存の `docs/test-perspectives/` があれば must を優先し、実装は `docs/test-implementation-conventions.md` に従う。

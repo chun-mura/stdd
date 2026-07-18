@@ -1,45 +1,13 @@
-# ファジング (Fuzz Testing)
+# ファジング
 
-## いつ使うか (適用条件)
+## 適用
 
-パーサ・デシリアライザ・ファイルデコーダ・ネットワークプロトコルハンドラなど、信頼できない外部入力を読むコード。クラッシュ・ハング・メモリ安全性違反が主目的で、機能の正確さ (出力値の検証) は example-based (同値分割・境界値分析・PBT) の領分という選び分け。
+信頼できない入力を読むパーサ、デシリアライザ、デコーダ、プロトコル処理に使う。主目的はクラッシュ・ハング・安全性違反の発見であり、出力の正しさは example-based または PBT で補う。
 
-## 導出手順
+## 導出
 
-1. 対象関数の入力面 (attack surface) を特定: ファイルフォーマット、ネットワークパケット構造、プロトコル状態図など
-2. ハーネス (harness) を作る: ランダム/変異した入力バイト列 → 対象関数 → クラッシュ検出
-3. カバレッジガイド付きファザーで実行 (libFuzzer / AFL++ / 言語組込み)
-4. クラッシュを見つけたら、最小化 (minimization) して回帰テストのコーパスに昇格
+1. 入力面と構造を特定する。
+2. 決定的な1入力1実行の harness を作る。
+3. coverage-guided fuzzer を実行し、クラッシュ入力を最小化して回帰 corpus に加える。
 
-## 実装パターン
-
-言語非依存の原則: ハーネスは決定的 (グローバル状態なし)・1入力1実行・標準入力から読む設計。
-
-```python
-# Fuzzing harness for JPEG decoder
-import atheris
-import sys
-from jpeg_decoder import decode
-
-@atheris.instrument_func
-def fuzz_jpeg(data: bytes):
-    try:
-        decode(data)
-    except Exception:
-        pass  # Expected: decoder must not crash on invalid input
-
-atheris.Setup(sys.argv, fuzz_jpeg)
-atheris.Fuzz()
-```
-
-Go ならネイティブ `go test -fuzz=FuzzName` が可能。ツール選択は環境・言語・統合容易性で決める。
-
-## 科学的根拠
-
-Miller et al. 1990 (CACM — fuzzing の起源) / Seacord 2013 / Google OSS-Fuzz 実績 — 全文は `sources.md` 参照
-
-## 限界と誤用
-
-- **オラクル問題**: クラッシュ・タイムアウト以外の誤り (論理エラー) は検出できない。アサーション・サニタイザ (AddressSanitizer / MemorySanitizer) と併用して緩和
-- CI での実行時間コスト: フルスイートのファジングは多数のコアと時間を要する。回帰用の最小コーパス + 定期フルスイート (夜間・休前) の2層運用が典型
-- 構造化入力 (JSON / Protocol Buffer など) には辞書・文法ベースの変異が必要。ランダムバイト列単体では到達不可能な境界を見つけにくい
+導出表は `D-ID / 入力面・不変条件 / harness・corpus / 停止条件` とする。CI は最小 corpus と定期フル実行に分ける。構造化入力には辞書・文法を使う。実装は `docs/test-implementation-conventions.md`、根拠は `docs/evidence.md`（fuzz）。

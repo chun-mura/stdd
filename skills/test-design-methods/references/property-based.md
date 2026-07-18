@@ -1,23 +1,7 @@
-# Property-Based Testing (PBT)
+# Property-Based Testing
 
-## いつ使うか (適用条件)
+## 適用
 
-roundtrip 対 (encode/decode, serialize/deserialize)、正規化や冪等な変換、数学的性質を持つ純関数、参照実装の再実装など、入力全域で成り立つ**性質 (property)** を言える関数。例示ベース (同値分割・境界値分析) は期待値を1件ずつ列挙できるときに強く、PBT は「どの入力を与えても性質 P が成り立つ」と言える場合に強い。
+roundtrip、正規化、冪等変換、数学的性質を表明できる純関数に使う。仕様表で期待値を列挙できる領域は example-based を優先する。
 
-## 導出手順
-
-**導出・実装は trailofbits-property-based-testing スキルに委譲する。** 性質カタログ・ジェネレータ・ライブラリ選定・shrinking 処理はそちらが専門。stdd では「いつ選ぶか」の判断のみを担当。
-
-## 実装パターン
-
-同上 — 実装詳細は trailofbits-property-based-testing スキルを参照。
-
-## 科学的根拠
-
-Claessen & Hughes 2000 "QuickCheck" (ICFP '00) — 全文は `sources.md` 参照
-
-## 限界と誤用
-
-- 性質の定義が「実装そのもの」の写しになるとテストにならない (検証対象がない)
-- 期待値が料金表など仕様表で明示的に与えられる領域は example-based (同値分割・境界値分析) の領分
-- 初期値の選定を誤ると、性質は成り立つが実装の盲点を検出できない場合がある
+性質、ジェネレータ、shrinking、ライブラリ選定は `trailofbits-property-based-testing` に委譲する。導出表は `D-ID / 性質 / ジェネレータ制約 / 失敗時の回帰化` とする。実装は `docs/test-implementation-conventions.md`、根拠は `docs/evidence.md`（PBT）。

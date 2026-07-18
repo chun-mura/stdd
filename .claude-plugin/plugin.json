@@ -1,6 +1,6 @@
 {
   "name": "stdd",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Scientific test design toolkit: evidence-based test case derivation methods, method selection guide, and test suite quality evaluation",
   "author": { "name": "chun-mura" },
   "homepage": "https://github.com/chun-mura/stdd",

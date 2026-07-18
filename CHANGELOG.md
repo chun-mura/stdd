@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0 - 2026-07-18
+
+性能を維持したトークン使用量の削減。
+
+- 詳細出典を `docs/evidence.md`、反復していた実装例を `docs/test-implementation-conventions.md` に分離。skills と references は選択・導出に必要な規則だけに圧縮
+- `/stdd:test-design` は必要な reference だけを読み、導出行 ID を正本にした重複のない設計書を生成
+- `/stdd:test-design-sync` は `rg` で候補を絞ってから曖昧なケースだけを精査し、`/stdd:mutation-check` は survivor を正規化・重複排除してから照合
+- `tests/test_plugin_assets.sh` を追加し、分離先・導出規約・圧縮 command の不変条件を検査
+
 ## 0.5.2 - 2026-07-18
 
 トークン効率の改善。手法の内容・出典の変更はなし (skill 発動時の実効トークンを約25%削減)。

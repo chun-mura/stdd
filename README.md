@@ -45,6 +45,7 @@
 3. 資産変更時は README インデックス + CHANGELOG + plugin.json version を同時更新
 4. 重複禁止 (superpowers/aidd/trailofbits と重複する機能は作らずポインタのみ)
 5. 受動ドキュメント禁止 (知見は skills=自動トリガ か hooks=強制 に置く)
-6. 出典必須 (references/ への手法追加は各 skill の `references/sources.md` に検証済み出典を登録したものに限る。出典が確認できない手法・数値は掲載禁止。references 本文には出典キーのみ記載しトークン効率を保つ)
+6. 出典必須 (手法追加時は `docs/evidence.md` に検証済み出典を登録する。通常の reference は導出規則だけを持つ)
+7. 設計書最小化 (導出表を正本にし、ケース表は導出行 ID を参照して入力・期待結果を重複させない)
 
 > ⚠️ このプラグインは実プロジェクトでの検証が未実施である。

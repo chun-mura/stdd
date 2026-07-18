@@ -18,6 +18,9 @@ jobs:
           jq -e . .claude-plugin/plugin.json > /dev/null
           jq -e . .claude-plugin/marketplace.json > /dev/null
 
+      - name: Validate plugin assets
+        run: bash tests/test_plugin_assets.sh
+
       # Operating rule 3: asset changes must ship with a version bump
       - name: Require version bump when commands/skills change
         run: |
