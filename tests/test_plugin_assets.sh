@@ -27,5 +27,5 @@ rg -q 'experimental' README.md
 rg -Fq 'Reid, S. (1997)' docs/evidence.md
 rg -Fq 'Jia, Y. and Harman, M. (2011)' docs/evidence.md
 
-jq -e '.version == "0.6.1"' .claude-plugin/plugin.json >/dev/null
+jq -e '.version == "0.6.2"' .claude-plugin/plugin.json >/dev/null
 echo 'plugin asset checks passed'
