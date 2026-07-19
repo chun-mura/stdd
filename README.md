@@ -10,7 +10,7 @@
 /plugin marketplace add chun-mura/stdd
 /plugin install stdd@stdd
 
-# 併用推奨: superpowers (TDD プロセス規律) + aidd (test-perspectives の観点出力)
+# 併用推奨: superpowers + aidd + property-based-testing@trailofbits（手順は「併用推奨」参照）
 ```
 
 ## インデックス
@@ -37,6 +37,17 @@
 - **superpowers**: TDD プロセス規律 (Red-Green-Refactor サイクルの実行) は superpowers に委譲する
 - **aidd**: test-perspectives の観点出力を stdd の各手法への入力として使う
 - **trailofbits-property-based-testing**: PBT (property-based testing) の実行方法は同スキルに委譲する
+
+```bash
+/plugin marketplace add obra/superpowers-marketplace
+/plugin install superpowers@superpowers-marketplace
+
+/plugin marketplace add chun-mura/aidd
+/plugin install aidd@aidd
+
+/plugin marketplace add trailofbits/skills
+/plugin install property-based-testing@trailofbits
+```
 
 ## 運用ルール
 

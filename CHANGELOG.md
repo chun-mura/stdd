@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.2 - 2026-07-19
+
+- `README.md`: 併用推奨 (superpowers / aidd / property-based-testing@trailofbits) のインストールコマンドを追記
+
 ## 0.6.1 - 2026-07-18
 
 非中核資産を整理。
