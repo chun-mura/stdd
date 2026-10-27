@@ -1,7 +1,11 @@
 ---
+name: test-design
 description: 対象コードとテスト観点から適用手法を選択し、具体テストケース一覧を導出して docs/test-design/ に保存する
 argument-hint: [対象ファイル/機能。省略時は git diff と docs/test-perspectives/ の最新ファイル]
+disable-model-invocation: true
 ---
+
+**パスと引数の解決**: この文書の相対パスは、この SKILL.md があるディレクトリを起点にする。`$ARGUMENTS` が文字のまま残っている場合（Codex・Cursor など）は、この skill を呼び出したメッセージのうち skill 名以外の部分を `$ARGUMENTS` とみなす。
 
 **対象**: `$ARGUMENTS`、なければ `git diff` と staged diff。最新の `docs/test-perspectives/` は must 観点だけを抽出する。
 

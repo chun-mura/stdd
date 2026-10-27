@@ -18,6 +18,9 @@ jobs:
           jq -e . .claude-plugin/plugin.json > /dev/null
           jq -e . .claude-plugin/marketplace.json > /dev/null
 
+      - name: Install ripgrep
+        run: sudo apt-get update && sudo apt-get install -y ripgrep
+
       - name: Validate plugin assets
         run: bash tests/test_plugin_assets.sh
 

@@ -1,7 +1,11 @@
 ---
+name: test-design-sync
 description: experimental: テスト設計書 (docs/test-design/) と実テストコードの乖離を検知し、ケースの実装状態を最新化する
 argument-hint: [対象設計書パス。省略時は docs/test-design/ 全体]
+disable-model-invocation: true
 ---
+
+**パスと引数の解決**: この文書の相対パスは、この SKILL.md があるディレクトリを起点にする。`$ARGUMENTS` が文字のまま残っている場合（Codex・Cursor など）は、この skill を呼び出したメッセージのうち skill 名以外の部分を `$ARGUMENTS` とみなす。
 
 > experimental: 継続管理された D-ID 付き設計書があるプロジェクト向け。実運用での有効性を検証中であり、結果は必ず人が確認する。
 

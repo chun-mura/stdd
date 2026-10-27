@@ -15,17 +15,17 @@ while IFS= read -r reference; do
 done < <(find skills -path '*/references/*.md' -type f | sort)
 
 rg -q '導出表の1行を.*テストケース' skills/test-design-methods/SKILL.md
-! rg -q 'docs/test-implementation-conventions.md' skills commands README.md
-rg -q '必要な reference だけを読む' commands/test-design.md
-rg -q '導出行 ID' commands/test-design.md
-rg -q '候補テストだけを読む' commands/test-design-sync.md
-rg -q '導出表から入力・期待結果を1行に投影' commands/test-design-sync.md
-rg -q '正規化' commands/mutation-check.md
-rg -q '導出表へ.*mutation' commands/mutation-check.md
-rg -q 'experimental' commands/test-design-sync.md
+! rg -q 'docs/test-implementation-conventions.md' skills README.md
+rg -q '必要な reference だけを読む' skills/test-design/SKILL.md
+rg -q '導出行 ID' skills/test-design/SKILL.md
+rg -q '候補テストだけを読む' skills/test-design-sync/SKILL.md
+rg -q '導出表から入力・期待結果を1行に投影' skills/test-design-sync/SKILL.md
+rg -q '正規化' skills/mutation-check/SKILL.md
+rg -q '導出表へ.*mutation' skills/mutation-check/SKILL.md
+rg -q 'experimental' skills/test-design-sync/SKILL.md
 rg -q 'experimental' README.md
 rg -Fq 'Reid, S. (1997)' docs/evidence.md
 rg -Fq 'Jia, Y. and Harman, M. (2011)' docs/evidence.md
 
-jq -e '.version == "0.6.2"' .claude-plugin/plugin.json >/dev/null
+jq -e '.version == "0.7.0"' .claude-plugin/plugin.json >/dev/null
 echo 'plugin asset checks passed'

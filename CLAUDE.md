@@ -4,19 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-A Claude Code **plugin repository** (not an application). It ships a catalog of evidence-based test
+A **plugin repository** (not an application) for Claude Code, Codex and Cursor. It ships a catalog of evidence-based test
 design methods (equivalence partitioning, boundary value analysis, decision tables, state transition
 testing, pairwise, PBT, fuzz) plus test-suite quality evaluation (coverage-strength hierarchy, mutation
-testing), packaged as Claude Code skills, commands, and reference docs consumed at runtime by other
-Claude Code sessions — not as a library imported by test code.
+testing), packaged as skills and reference docs consumed at runtime by agent sessions — not as a library
+imported by test code.
+
+`test-design`, `mutation-check` and `test-design-sync` were slash commands until 0.7.0. They moved to `skills/`
+because Codex does not ship commands in plugins and Cursor recommends skills; Claude Code still invokes them as
+`/stdd:<name>`. They carry `disable-model-invocation: true` (and `agents/openai.yaml` with
+`allow_implicit_invocation: false` for Codex) so no harness starts them on its own. Write paths in them relative to
+the skill directory (`../test-design-methods/SKILL.md`); a repo-root path such as `skills/...` has no fixed base in
+Codex or Cursor.
 
 **The plugin itself is unvalidated in production**: README.md states explicitly "このプラグインは実プロジェクトでの検証が未実施である" (no real-project validation has been done yet). Treat behavioral claims about the skills/commands as untested; treat the cited evidence (docs/evidence.md) as the only thing that's actually verified.
 
 ## Repository layout
 
 - `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` — plugin manifest and marketplace entry. `plugin.json.version` is the single source of truth for the plugin version.
+- `.codex-plugin/plugin.json`, `.cursor-plugin/plugin.json` — the same metadata for Codex and Cursor; keep `version` identical to `.claude-plugin/plugin.json` (CI checks only that one).
 - `skills/test-design-methods/`, `skills/test-suite-evaluation/` — auto-triggered skills, each with a `SKILL.md` (routing table) and `references/*.md` (one method per file: selection criteria + derivation rules, no worked examples).
-- `commands/` — `/stdd:test-design`, `/stdd:mutation-check`, `/stdd:test-design-sync` (slash-command prompts).
+- `skills/test-design/`, `skills/mutation-check/`, `skills/test-design-sync/` — user-invoked skills (`/stdd:test-design` etc.).
 - `docs/evidence.md` — the only place with citations; see "Evidence rule" below.
 - `tests/test_plugin_assets.sh` — invariant checks over the repo's own files (not application tests).
 - `.github/workflows/validate.yml` — CI.
@@ -30,7 +38,7 @@ tests / coverage numbers can be trusted). They form a loop, not two independent 
 `test-suite-evaluation` (mutation-testing.md, coverage-criteria.md) surfaces **surviving mutants** and
 **unexecuted branches** → those become the input list that `test-design-methods`' method-selection flow
 (the "コード特性 → 手法" table in `skills/test-design-methods/SKILL.md`) consumes to derive the missing
-cases. `commands/mutation-check.md` implements this loop directly: it runs mutation testing, classifies
+cases. `skills/mutation-check/SKILL.md` implements this loop directly: it runs mutation testing, classifies
 survivors (insufficient test / equivalent mutant / unreachable code), and only "insufficient test"
 survivors get cross-referenced against `docs/test-design/*.md`; unmatched ones are routed into the
 test-design-methods selection flow to derive new `D-ID` rows.
@@ -61,10 +69,10 @@ jq -e . .claude-plugin/plugin.json .claude-plugin/marketplace.json   # manifest 
 `tests/test_plugin_assets.sh` checks structural invariants, e.g.: `docs/evidence.md` exists and no
 stale files from prior refactors have reappeared (`docs/superpowers`,
 `docs/test-implementation-conventions.md`, `skills/*/references/sources.md`); every `references/*.md`
-points at `docs/evidence.md`; specific phrases exist in `SKILL.md`/`commands/*.md` (used as change
-markers — e.g. `experimental` in both `commands/test-design-sync.md` and `README.md`); specific
+points at `docs/evidence.md`; specific phrases exist in the `SKILL.md` files (used as change
+markers — e.g. `experimental` in both `skills/test-design-sync/SKILL.md` and `README.md`); specific
 citations exist in `docs/evidence.md`; and — **it hardcodes an exact expected version string** via
-`jq -e '.version == "0.6.2"' .claude-plugin/plugin.json`.
+`jq -e '.version == "0.7.0"' .claude-plugin/plugin.json`.
 
 **Known gotcha**: that hardcoded version check has gone stale before (a past release bumped
 `.claude-plugin/plugin.json` without updating this string, so `bash tests/test_plugin_assets.sh` failed
@@ -79,7 +87,7 @@ mergeable.
 
 ## When editing an asset
 
-1. Edit the skill/command/reference file.
+1. Edit the skill/reference file.
 2. Update `docs/evidence.md` if a method's claim or citation changed (rule 6).
 3. Bump `.claude-plugin/plugin.json` `version`, and update the hardcoded version string in
    `tests/test_plugin_assets.sh` if it references one.
