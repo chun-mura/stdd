@@ -1,27 +1,45 @@
 # stdd
 
-科学的根拠に基づいたテスト設計手法カタログ・手法選択ガイド・テストスイート品質評価を提供する Claude Code プラグイン。
+科学的根拠に基づいたテスト設計手法カタログ・手法選択ガイド・テストスイート品質評価を提供するプラグイン。Claude Code・Codex・Cursor で使える。
 
 **棲み分け**: process は superpowers、汎用 task (test-perspectives 等) は aidd、テスト設計手法 (ケース導出・スイート品質評価) が stdd。UI ドメイン特化は uidd。
 
 ## 導入
 
 ```bash
+# Claude Code
 /plugin marketplace add chun-mura/stdd
 /plugin install stdd@stdd
+
+# Codex CLI
+codex plugin marketplace add chun-mura/stdd
+codex plugin add stdd@stdd
+
+# Cursor agent CLI (ローカルの clone を読み込む)
+cursor-agent --plugin-dir <stdd を clone したパス>
 
 # 併用推奨: superpowers + aidd + property-based-testing@trailofbits（手順は「併用推奨」参照）
 ```
 
+Cursor は、Claude Code に入れたプラグインの skill も読み込む。Claude Code に stdd を入れてあれば、Cursor 側で別に入れなくても使える。
+
+### 呼び出し方
+
+| | Claude Code | Codex | Cursor |
+|---|---|---|---|
+| テストケースの導出 | `/stdd:test-design <対象>` | `$stdd:test-design <対象>` | `/test-design <対象>` |
+| mutation の突き合わせ | `/stdd:mutation-check <対象>` | `$stdd:mutation-check <対象>` | `/mutation-check <対象>` |
+| 設計書と実装の同期 | `/stdd:test-design-sync <設計書>` | `$stdd:test-design-sync <設計書>` | `/test-design-sync <設計書>` |
+
 ## インデックス
 
-### Commands (タスク特化プロンプト)
+### Skills (利用者が呼ぶ。モデルからは自動起動しない)
 
-| Command | 用途 |
+| Skill | 用途 |
 |---|---|
-| `/stdd:test-design` | 対象コードとテスト観点から適用手法を選択し、具体テストケース一覧を導出して `docs/test-design/` に保存する |
-| `/stdd:mutation-check` | mutation testing を実行し、生存 mutant を `docs/test-design/` のケース一覧と突き合わせて不足ケースを提案する |
-| `/stdd:test-design-sync` | experimental: D-ID 付き設計書と実テストコードの乖離を検知する（結果は要確認） |
+| `test-design` | 対象コードとテスト観点から適用手法を選択し、具体テストケース一覧を導出して `docs/test-design/` に保存する |
+| `mutation-check` | mutation testing を実行し、生存 mutant を `docs/test-design/` のケース一覧と突き合わせて不足ケースを提案する |
+| `test-design-sync` | experimental: D-ID 付き設計書と実テストコードの乖離を検知する（結果は要確認） |
 
 ### Skills (自動トリガする知見)
 

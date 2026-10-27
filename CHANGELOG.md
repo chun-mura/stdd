@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.7.0 - 2026-10-27
+
+commands を skills に移し、Codex と Cursor でも使えるようにした。Claude Code での呼び出し方 (`/stdd:test-design` など) は変わらない。
+
+- `skills/test-design/SKILL.md`, `skills/mutation-check/SKILL.md`, `skills/test-design-sync/SKILL.md`: `commands/` から移動。`name` と `disable-model-invocation: true` を追加し、`$ARGUMENTS` が展開されないハーネスでの読み替えを追記。`mutation-check` の `skills/...`・`references/...` 参照を skill からの相対パスに変更
+- `skills/*/agents/openai.yaml` (上の3つ): Codex でモデルから自動起動しない設定
+- `.codex-plugin/plugin.json`, `.cursor-plugin/plugin.json`: Codex と Cursor 用のマニフェストを追加
+- `tests/test_plugin_assets.sh`: 検査対象のパスを `skills/<name>/SKILL.md` に、版を 0.7.0 に変更
+- `README.md`: 導入手順と呼び出し方を3ハーネス分に、インデックスを skills に変更
+- `CLAUDE.md`: commands から skills への移動を反映
+
 ## 0.6.2 - 2026-07-19
 
 - `README.md`: 併用推奨 (superpowers / aidd / property-based-testing@trailofbits) のインストールコマンドを追記
